@@ -11,14 +11,12 @@ export default function HeroSection() {
   useEffect(() => {
     const events = ['pointerdown', 'click', 'keydown', 'touchstart'];
 
-    // --- Dźwięk logo (hover) ---
     const audio = new Audio('/voice/KURSIWO.mp3');
     audio.preload = 'auto';
     audio.volume = 0.5;
     audio.load();
     audioRef.current = audio;
 
-    // --- Enter sound: element <audio autoPlay> jest już w HTML ---
     const enter = enterRef.current;
     if (enter) enter.volume = 0.4;
     let enterPlayed = false;
@@ -31,15 +29,14 @@ export default function HeroSection() {
           enterPlayed = true;
         })
         .catch(() => {
-          /* zablokowane – zagra przy pierwszej interakcji */
+          
         });
     };
 
     const onFirstInteraction = () => {
-      // Enter sound (jeśli jeszcze nie zagrał)
       playEnter();
 
-      // Odblokowanie audio logo
+      
       const a = audioRef.current;
       if (a) {
         a.muted = true;
@@ -57,7 +54,7 @@ export default function HeroSection() {
       events.forEach((e) => window.removeEventListener(e, onFirstInteraction));
     };
 
-    // Próba natychmiast po załadowaniu
+   
     playEnter();
     events.forEach((e) => window.addEventListener(e, onFirstInteraction));
 
@@ -69,22 +66,22 @@ export default function HeroSection() {
     };
   }, []);
 
-  // Dźwięk logo – poza useEffect, żeby JSX go widział
+  
   const playLogoSound = () => {
     const a = audioRef.current;
     if (!a) return;
     a.currentTime = 0;
     a.play().catch(() => {
-      /* przeglądarka zablokowała odtwarzanie do pierwszej interakcji */
+      
     });
   };
 
   return (
     <section className="relative w-full overflow-hidden min-h-[420px] lg:min-h-[480px] flex flex-col md:flex-row items-center justify-between gap-8 px-5 sm:px-8 md:px-12 lg:px-16 py-10 shadow-sm">
-      {/* Enter sound – w HTML, startuje od razu po załadowaniu strony */}
+      
       <audio ref={enterRef} src="/voice/EnterSound.mp3" autoPlay preload="auto" />
 
-      {/* 1. Zdjęcie w tle */}
+      
       <Image
         src="/HeroBg.png"
         alt="Tło sekcji głównej"
@@ -94,12 +91,12 @@ export default function HeroSection() {
         className="object-cover object-center z-0"
       />
 
-      {/* 2. Subtelny gradient (z góry na mobile, z lewej na desktopie) */}
+      
       <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-[#f0ece1]/90 via-[#f0ece1]/60 to-transparent z-[1]" />
 
-      {/* 3. Treść */}
+      
       <div className="relative z-10 w-full max-w-xl flex flex-col items-center text-center md:items-start md:text-left">
-        {/* Gruba smuga farby z tekstem */}
+        
         <div className="relative w-52 h-20 sm:w-60 sm:h-24 mb-2 flex items-center justify-center">
           <svg
             viewBox="0 0 240 96"
@@ -124,7 +121,7 @@ export default function HeroSection() {
           </span>
         </div>
 
-        {/* Nazwa jako obrazek */}
+        
         <h1 className="mb-3">
           <Image
             src="/NameKursiwo.png"
@@ -150,7 +147,7 @@ export default function HeroSection() {
         </button>
       </div>
 
-      {/* 4. Logo / maskotka z dźwiękiem */}
+      
       <div className="relative z-10 flex items-center justify-center w-full md:w-1/2">
         <div
           className="relative w-52 h-52 sm:w-64 sm:h-64 lg:w-96 lg:h-96 cursor-pointer transform hover:scale-105 transition-transform duration-300"

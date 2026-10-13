@@ -4,7 +4,7 @@ import { Search, User } from 'lucide-react';
 export default function SearchSection() {
   return (
     <header className="w-full flex flex-col gap-3 md:flex-row md:items-center md:justify-between py-4 px-4 md:px-8 bg-[#f6f4ee]">
-      {/* Lewa strona: tekst ze smugą farby pod spodem */}
+      
       <div className="relative inline-flex flex-col items-start pb-3 self-start">
         <span className="relative z-10 text-xs sm:text-sm font-bold tracking-wider text-stone-800 uppercase">
           Darmowe kursy. Większe możliwości.
@@ -23,18 +23,18 @@ export default function SearchSection() {
             </filter>
           </defs>
           <g filter="url(#search-paint-rough)" fill="#dc2626">
-            {/* Główna smuga */}
+            
             <path d="M3 13 C 20 7, 50 5, 90 7 C 120 8, 142 6, 157 9 L 154 12 C 140 11, 118 13, 92 13 C 60 14, 30 16, 6 17 Z" />
-            {/* Cieńsza smuga pod spodem */}
+            
             <path d="M14 15 C 45 12, 85 13, 125 12 C 138 12, 147 13, 152 14 L 148 16 C 125 16, 90 17, 55 18 C 38 18.5, 24 19, 16 19 Z" opacity="0.85" />
-            {/* Rozpryski suchego pędzla na końcach */}
+            
             <path d="M150 8 L 158 8.5 L 156 10 L 149 10.5 Z" opacity="0.7" />
             <path d="M1 14 L 8 12.5 L 9 15 L 2 16.5 Z" opacity="0.7" />
           </g>
         </svg>
       </div>
 
-      {/* Prawa strona: Wyszukiwarka i Profil */}
+      
       <div className="flex items-center gap-3 w-full md:w-auto">
         <div className="relative flex-1 md:flex-none md:w-80">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 w-4 h-4" />

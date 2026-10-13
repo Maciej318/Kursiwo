@@ -59,7 +59,7 @@ const courses = [
   },
 ];
 
-/* Smuga farby przed nagłówkiem */
+
 const PaintStroke = () => (
   <svg
     viewBox="0 0 72 48"
@@ -84,7 +84,7 @@ const PaintStroke = () => (
 export default function CourseSection() {
   return (
     <section className="mx-4 sm:mx-8 my-6 sm:my-8">
-      {/* Nagłówek sekcji */}
+     
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-5 sm:mb-6">
         <div className="flex items-center space-x-2">
           <PaintStroke />
@@ -103,7 +103,7 @@ export default function CourseSection() {
         </a>
       </div>
 
-      {/* Lista kafelków */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
         {courses.map((course) => {
           const CategoryIcon = course.categoryIcon;
@@ -112,7 +112,7 @@ export default function CourseSection() {
               key={course.id}
               className="bg-[#f9f8f3] rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all flex flex-row sm:flex-col group cursor-pointer"
             >
-              {/* Miniaturka: po lewej na mobile, u góry od sm */}
+           
               <div className="relative shrink-0 w-32 min-h-[150px] sm:w-full sm:h-56 sm:min-h-0 bg-stone-300 overflow-hidden">
                 <span className="absolute top-2 left-2 sm:left-auto sm:top-3 sm:right-3 z-10 bg-white/95 backdrop-blur-md text-stone-900 text-[10px] sm:text-xs font-bold px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full shadow-sm">
                   {course.badge}
@@ -131,7 +131,7 @@ export default function CourseSection() {
                 </div>
               </div>
 
-              {/* Treść + stopka */}
+              
               <div className="flex flex-col justify-between flex-1 min-w-0">
                 <div className="p-4 sm:p-5">
                   <div className="flex items-center space-x-2 text-stone-600 text-[11px] sm:text-xs font-extrabold tracking-wider uppercase mb-1.5 sm:mb-2">

@@ -12,7 +12,7 @@ const menuItems = [
   { name: 'FAQ', icon: HelpCircle, active: false },
 ];
 
-/* Hamburger: 3 smugi farby */
+
 const PaintHamburger = () => (
   <svg viewBox="0 0 40 32" className="w-9 h-8" fill="#dc2626" aria-hidden="true">
     <g filter="url(#paint-rough)">
@@ -23,7 +23,7 @@ const PaintHamburger = () => (
   </svg>
 );
 
-/* X: 2 skrzyżowane smugi farby */
+
 const PaintClose = () => (
   <svg viewBox="0 0 40 40" className="w-8 h-8" fill="#dc2626" aria-hidden="true">
     <g filter="url(#paint-rough)">
@@ -38,7 +38,7 @@ export default function LeftHeader() {
 
   return (
     <>
-      {/* Wspólny filtr rozdartych krawędzi farby (jedna definicja na cały komponent) */}
+      
       <svg className="absolute w-0 h-0" aria-hidden="true">
         <defs>
           <filter id="paint-rough" x="-5%" y="-30%" width="110%" height="160%">
@@ -48,7 +48,7 @@ export default function LeftHeader() {
         </defs>
       </svg>
 
-      {/* Pasek mobilny */}
+     
       <div className="md:hidden sticky top-0 z-40 h-14 px-4 flex items-center justify-between bg-[#EDE6DA] border-b border-stone-300">
         <Image src="/MainLogo.png" alt="Logo Kursiwo" width={40} height={40} className="object-contain" />
         <button
@@ -61,7 +61,7 @@ export default function LeftHeader() {
         </button>
       </div>
 
-      {/* Przyciemnienie tła na mobile */}
+      
       <div
         onClick={() => setOpen(false)}
         className={`md:hidden fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
@@ -70,14 +70,14 @@ export default function LeftHeader() {
         aria-hidden="true"
       />
 
-      {/* Sidebar: szuflada na mobile, stały panel od md */}
+      
       <aside
         className={`fixed inset-y-0 left-0 z-50 w-64 overflow-y-auto transform transition-transform duration-300 ease-out
           ${open ? 'translate-x-0' : '-translate-x-full'}
           md:translate-x-0 md:static md:z-auto md:min-h-screen md:overflow-hidden md:shrink-0
           bg-[#EDE6DA] border-r border-stone-300 flex flex-col justify-between select-none`}
       >
-        {/* Zamknięcie – tylko mobile */}
+        
         <button
           onClick={() => setOpen(false)}
           aria-label="Zamknij menu"
@@ -87,7 +87,7 @@ export default function LeftHeader() {
         </button>
 
         <div>
-          {/* Logo + nazwa */}
+          
           <div className="flex flex-col items-center mb-6 pt-6 px-6">
             <Image
               src="/MainLogo.png"
@@ -107,7 +107,7 @@ export default function LeftHeader() {
             />
           </div>
 
-          {/* Menu */}
+         
           <nav className="space-y-1">
             {menuItems.map((item) => {
               const Icon = item.icon;
@@ -131,7 +131,7 @@ export default function LeftHeader() {
             })}
           </nav>
 
-          {/* Zdjęcie z gradientem od dołu */}
+          
           <div className="relative w-full mt-4">
             <Image
               src="/LeftHeader.png"
@@ -144,7 +144,7 @@ export default function LeftHeader() {
           </div>
         </div>
 
-        {/* Decorative Bottom Section */}
+        
         <div className="relative z-10 px-6 pt-4 pb-8 text-left">
           <svg viewBox="0 0 160 24" className="w-40 h-6 mb-3 -ml-1" aria-hidden="true">
             <g filter="url(#paint-rough)" fill="#dc2626">

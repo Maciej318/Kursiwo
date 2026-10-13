@@ -6,7 +6,7 @@ import BrushStroke from './BrushStroke';
 export default function InformationSection() {
   return (
     <section className="relative mx-8 my-6 flex items-center min-h-[150px] px-8 lg:px-12 py-8">
-      {/* Filtr SVG do rozdartych krawędzi */}
+      
       <svg className="absolute w-0 h-0" aria-hidden="true">
         <filter id="rough-edge" x="-5%" y="-20%" width="110%" height="140%">
           <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" seed="3" result="noise" />
@@ -14,7 +14,7 @@ export default function InformationSection() {
         </filter>
       </svg>
 
-      {/* Tło: zdjęcie + przyciemnienie + szary pas – z postrzępionymi krawędziami */}
+      
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ filter: 'url(#rough-edge)' }}
@@ -39,11 +39,11 @@ export default function InformationSection() {
         </div>
       </div>
 
-      {/* Treść */}
+      
       <div className="relative z-10 w-full flex items-center justify-center">
-        {/* Kolumny informacyjne – na środku sekcji */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 w-full max-w-3xl xl:max-w-4xl mx-auto">
-          {/* Item 1 */}
+          
           <div className="flex items-center justify-center space-x-4 md:px-6">
             <BookOpen className="w-8 h-8 text-white shrink-0 stroke-[1.5]" />
             <div>
@@ -54,7 +54,7 @@ export default function InformationSection() {
             </div>
           </div>
 
-          {/* Item 2 */}
+          
           <div className="flex items-center justify-center space-x-4 md:px-6 md:border-x md:border-white/25">
             <Activity className="w-8 h-8 text-white shrink-0 stroke-[1.5]" />
             <div>
@@ -65,7 +65,7 @@ export default function InformationSection() {
             </div>
           </div>
 
-          {/* Item 3 */}
+          
           <div className="flex items-center justify-center space-x-4 md:px-6">
             <Users className="w-8 h-8 text-white shrink-0 stroke-[1.5]" />
             <div>
@@ -77,7 +77,7 @@ export default function InformationSection() {
           </div>
         </div>
 
-        {/* BrushStroke po prawej */}
+        
         <div className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 flex-col items-center justify-center">
           <BrushStroke text="歩ず" size="lg" className="!w-56 !h-20" />
           <span className="text-[10px] tracking-[0.25em] text-stone-200 uppercase -mt-1 font-bold">
